@@ -1,0 +1,400 @@
+/* ================================
+   DESIGN SYSTEM VARIABLES
+   ================================ */
+
+:root {
+    --color-text: #1a1a1a;
+    --color-bg: #ffffff;
+    --color-gray-100: #f5f5f5;
+    --color-gray-200: #e5e5e5;
+    --color-gray-300: #d4d4d4;
+    --color-gray-400: #a3a3a3;
+    --color-gray-500: #737373;
+    --color-gray-600: #525252;
+    --color-gray-700: #404040;
+    --color-accent: #1e3a5f;
+
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+}
+
+/* ================================
+   RESET & BASE STYLES
+   ================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================================
+   TYPOGRAPHY
+   ================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: var(--spacing-2xl);
+}
+
+h3 {
+    font-size: 22px;
+    margin-top: var(--spacing-xl);
+}
+
+h4 {
+    font-size: 18px;
+    margin-top: var(--spacing-lg);
+}
+
+p {
+    margin-bottom: var(--spacing-lg);
+}
+
+.subtitle {
+    font-size: 16px;
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* ================================
+   LAYOUT
+   ================================ */
+
+.container {
+    max-width: 680px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+header {
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* ================================
+   FORM ELEMENTS
+   ================================ */
+
+label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+textarea {
+    width: 100%;
+    font-family: var(--font-serif);
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 12px;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--color-text);
+    box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+}
+
+/* ================================
+   BUTTONS
+   ================================ */
+
+.button-primary {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+    background: var(--color-text);
+    color: var(--color-bg);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: var(--spacing-md);
+    transition: background 0.2s ease;
+    min-height: 44px;
+}
+
+.button-primary:hover:not(:disabled) {
+    background: var(--color-gray-700);
+}
+
+.button-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ================================
+   EXAMPLE BUTTONS
+   ================================ */
+
+.examples-section {
+    margin: var(--spacing-2xl) 0;
+}
+
+.example-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.example-btn {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    padding: 8px 16px;
+    background: var(--color-gray-100);
+    border: 1px solid var(--color-gray-200);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.example-btn:hover {
+    background: var(--color-gray-200);
+}
+
+/* ================================
+   LOADING INDICATOR
+   ================================ */
+
+.loading {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--color-gray-600);
+}
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--color-gray-200);
+    border-top-color: var(--color-text);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ================================
+   THINKING LOG
+   ================================ */
+
+.thinking-section {
+    margin: var(--spacing-2xl) 0;
+}
+
+.thinking-log {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid var(--color-gray-200);
+    border-radius: 4px;
+    padding: var(--spacing-md);
+    background: var(--color-gray-100);
+}
+
+.thinking-step {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    background: white;
+    border-left: 3px solid transparent;
+    border-radius: 4px;
+}
+
+.step-thinking {
+    border-left-color: #6366f1;
+}
+
+.step-tool_use {
+    border-left-color: #8b5cf6;
+}
+
+.step-tool_result {
+    border-left-color: #10b981;
+}
+
+.step-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+/* ================================
+   ANSWER SECTION
+   ================================ */
+
+.answer-section {
+    margin-top: var(--spacing-2xl);
+}
+
+.answer-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xl);
+    white-space: pre-wrap;
+}
+
+/* ================================
+   SOURCES
+   ================================ */
+
+.sources {
+    margin-top: var(--spacing-md);
+}
+
+.source-item {
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    background: var(--color-gray-100);
+    border-radius: 4px;
+}
+
+.source-item a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.source-item a:hover {
+    text-decoration: underline;
+}
+
+/* ================================
+   STATS
+   ================================ */
+
+.stats {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-gray-200);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--color-gray-600);
+}
+
+/* ================================
+   UTILITIES
+   ================================ */
+
+.hidden {
+    display: none;
+}
+
+.error {
+    color: #dc2626;
+}
+
+/* ================================
+   ACCESSIBILITY
+   ================================ */
+
+*:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.2);
+}
+
+a:focus {
+    outline: 2px dashed var(--color-text);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .container {
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+
+    textarea {
+        font-size: 16px;
+    }
+
+    .example-buttons {
+        flex-direction: column;
+    }
+
+    .example-btn {
+        width: 100%;
+        text-align: left;
+    }
+}

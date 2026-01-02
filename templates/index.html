@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Assistant - Agentic AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Research Assistant</h1>
+            <p class="subtitle">AI-powered autonomous research agent with transparent reasoning</p>
+        </header>
+
+        <main>
+            <!-- Question Input Section -->
+            <section class="input-section">
+                <label for="question">Ask a research question:</label>
+                <textarea
+                    id="question"
+                    placeholder="e.g., What are the latest developments in quantum computing?"
+                    rows="4"
+                ></textarea>
+                <button id="research-btn" class="button-primary">Start Research</button>
+                <div id="loading" class="loading hidden">
+                    <span class="spinner"></span>
+                    <span>Agent working...</span>
+                </div>
+            </section>
+
+            <!-- Example Questions -->
+            <section class="examples-section">
+                <h3>Example Questions:</h3>
+                <div class="example-buttons">
+                    <button class="example-btn" data-question="What are the latest developments in quantum computing?">
+                        Quantum Computing Developments
+                    </button>
+                    <button class="example-btn" data-question="Compare the renewable energy policies of the top 3 economies">
+                        Renewable Energy Policies
+                    </button>
+                    <button class="example-btn" data-question="What is the current scientific consensus on intermittent fasting?">
+                        Intermittent Fasting Science
+                    </button>
+                    <button class="example-btn" data-question="Summarize recent breakthroughs in battery technology">
+                        Battery Technology Breakthroughs
+                    </button>
+                </div>
+            </section>
+
+            <!-- Agent Thinking Section -->
+            <section id="thinking-section" class="thinking-section hidden">
+                <h3>Agent Process:</h3>
+                <div id="thinking-log" class="thinking-log">
+                    <!-- Steps will be added here dynamically -->
+                </div>
+            </section>
+
+            <!-- Final Answer Section -->
+            <section id="answer-section" class="answer-section hidden">
+                <h3>Answer:</h3>
+                <div id="answer-text" class="answer-text"></div>
+
+                <h3>Sources:</h3>
+                <div id="sources" class="sources">
+                    <!-- Sources will be added here -->
+                </div>
+
+                <div class="stats">
+                    <p>Research completed in <strong><span id="step-count">0</span> iterations</strong></p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
