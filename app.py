@@ -4,6 +4,7 @@ Flask application with SSE streaming for real-time agent updates.
 
 from flask import Flask, render_template, request, Response, jsonify
 import json
+import os
 import config
 from agent import ResearchAgent
 import threading
@@ -108,4 +109,7 @@ def health():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000, threaded=True)
+    # Get port from environment variable or default to 5000
+    port = int(os.environ.get('PORT', 5000))
+    # Use debug=False for production
+    app.run(host='0.0.0.0', port=port, debug=False, threaded=True)
